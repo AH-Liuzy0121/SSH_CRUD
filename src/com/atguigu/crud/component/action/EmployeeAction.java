@@ -35,6 +35,7 @@ public class EmployeeAction implements RequestAware, ModelDriven<Employee>,
 		return "success";
 	}
 
+	//添加
 	public String addUI() {
 		List<Department> deptList = employeeService.getDeptList();
 		requestMap.put("deptList", deptList);
