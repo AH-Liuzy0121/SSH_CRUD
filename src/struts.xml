@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+
+	<package name="default" namespace="/" extends="struts-default">
+		<default-interceptor-ref name="paramsPrepareParamsStack"/>
+	
+			<action name="showEmpList" class="employeeAction" method="showEmpList">
+				<result>/showEmployeeList.jsp</result>
+			</action>
+
+			<action name="addUI" class="employeeAction" method="addUI">
+				<result>/addEmployee.jsp</result>
+			</action>
+
+			<action name="editUI" class="employeeAction" method="editUI">
+				<result>/editEmployee.jsp</result>
+			</action>
+
+			<action name="saveEmp" class="employeeAction" method="saveEmp">
+				<result type="redirectAction">showEmpList</result>
+			</action>
+
+			<action name="updateEmp" class="employeeAction" method="updateEmp">
+				<result type="redirectAction">showEmpList</result>
+			</action>
+
+			<action name="removeEmp" class="employeeAction" method="removeEmp">
+				<result type="redirectAction">showEmpList</result>
+			</action>
+	</package>
+
+</struts>
