@@ -42,6 +42,7 @@ public class EmployeeAction implements RequestAware, ModelDriven<Employee>,
 		return "success";
 	}
 
+	//添加前准备
 	public void prepareSaveEmp() {
 		this.employee = new Employee();
 	}
